@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { PlayIcon } from "@heroicons/react/24/solid"
 
 const Clips = ({ clip, imgsrc }) => {
@@ -23,5 +24,10 @@ const Clips = ({ clip, imgsrc }) => {
     </div>
   );
 };
+
+Clips.propTypes = {
+  clip: PropTypes.string.isRequired,
+  imgsrc: PropTypes.string.isRequired,
+}
 
 export default Clips;
