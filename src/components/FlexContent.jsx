@@ -19,7 +19,7 @@ const FlexContent = ({ ifExists, endpoint: { title, heading, text, img, btn, url
 };
 
 FlexContent.propTypes = {
-    ifExists: PropTypes.bool.isRequired,
+    ifExists: PropTypes.bool,
     endpoint: PropTypes.shape({
         title: PropTypes.string.isRequired,
         heading: PropTypes.string.isRequired,

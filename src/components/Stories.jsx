@@ -1,10 +1,10 @@
-import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/splide/css';
 import { HashtagIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import Title from "./utils/Title";
 import { truncate } from "lodash";
+import PropTypes from "prop-types";
 
 const Stories = ({ story: { title, news } }) => {
     const splideOptions = {
@@ -70,5 +70,22 @@ const Stories = ({ story: { title, news } }) => {
     </>
   );
 };
+
+Stories.propTypes = {
+    story: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      news: PropTypes.arrayOf(
+        PropTypes.shape({
+          img: PropTypes.string.isRequired,
+          time: PropTypes.string.isRequired,
+          by: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          text: PropTypes.string.isRequired,
+          url: PropTypes.string.isRequired,
+          btn: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  };
 
 export default Stories;

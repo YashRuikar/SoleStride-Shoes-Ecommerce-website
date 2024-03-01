@@ -2,7 +2,7 @@ import { ShoppingBagIcon, StarIcon } from "@heroicons/react/24/solid";
 import PropTypes from "prop-types";
 
 const Item = ({
-  ifExists,
+  ifExists = false,
   id,
   color,
   shadow,
@@ -70,8 +70,8 @@ const Item = ({
 };
 
 Item.propTypes = {
-  ifExists: PropTypes.bool.isRequired,
-  id: PropTypes.string.isRequired,
+  ifExists: PropTypes.bool, // No longer marked as required
+  id: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   shadow: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

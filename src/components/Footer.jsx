@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Footer = ({ footerAPI: { titles, links } }) => {
   return (
     <div>
@@ -25,7 +27,7 @@ const Footer = ({ footerAPI: { titles, links } }) => {
             <p className="text-sm md:text-center">
               Copyright<sup className="text-base font-bold">&copy;</sup> All
               Reserved Rights{" "}
-              <span className="font-semibold">YASH RUIKAR {Year}</span>
+              <span className="font-semibold">YASH RUIKAR</span>
             </p>
           </div>
         </div>
@@ -33,5 +35,22 @@ const Footer = ({ footerAPI: { titles, links } }) => {
     </div>
   );
 };
+
+Footer.propTypes = {
+    footerAPI: PropTypes.shape({
+      titles: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+      links: PropTypes.arrayOf(
+        PropTypes.arrayOf(
+          PropTypes.shape({
+            link: PropTypes.string.isRequired,
+          })
+        )
+      ).isRequired,
+    }).isRequired,
+  };
 
 export default Footer;
