@@ -1,4 +1,4 @@
-import { FlexContent, Footer, Hero, Navbar, Sales, Stories } from "./components";
+import { Cart, FlexContent, Footer, Hero, Navbar, Sales, Stories } from "./components";
 import {
   heroapi,
   popularsales,
@@ -13,6 +13,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
+      <Cart />
       <main className="flex flex-col gap-16 relative">
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists={true} />{/* Issue is here */}
